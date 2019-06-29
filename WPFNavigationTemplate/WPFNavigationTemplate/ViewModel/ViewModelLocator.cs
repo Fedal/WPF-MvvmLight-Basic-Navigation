@@ -31,18 +31,10 @@ namespace WPFNavigationTemplate.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
+            
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<Page1ViewModel>();
         }
 
         public MainViewModel Main
@@ -51,6 +43,11 @@ namespace WPFNavigationTemplate.ViewModel
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
+        }
+
+        public Page1ViewModel PageOneViewModel
+        {
+            get => ServiceLocator.Current.GetInstance<Page1ViewModel>();
         }
         
         public static void Cleanup()

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,9 @@ namespace WPFNavigationTemplate
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            //SimpleIoc.Default.Register<INavigationService, NavigationService>();
+        }
     }
 }

@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFNavigationTemplate"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding Main, Source=StaticResource Locator}">
     <Grid>
-        
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock Text="This is the main page. Type a parameter below if you wish to navigate with parameter."/>
+            <TextBox Text="{Binding ParameterText, Mode=TwoWay}"/>
+            <Button Content="Navigate"
+                    Command="{Binding NavigateCommand}"/>
+        </StackPanel>
     </Grid>
 </Window>
